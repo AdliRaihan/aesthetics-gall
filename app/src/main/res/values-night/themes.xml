@@ -1,0 +1,60 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Status bar color. -->
+    <!-- Base application theme. -->
+<!--    <style name="Theme.LPSimulation" parent="Theme.MaterialComponents.Light.NoActionBar">-->
+
+<!--        &lt;!&ndash; Primary brand color. &ndash;&gt;-->
+<!--        <item name="colorPrimary">@color/black</item>-->
+
+<!--        &lt;!&ndash; Color for background status bar &ndash;&gt;-->
+<!--        <item name="colorPrimaryVariant">@color/black</item>-->
+
+<!--        &lt;!&ndash; This is bottom background thing &ndash;&gt;-->
+<!--        <item name="colorOnPrimary">@color/black</item>-->
+
+<!--        &lt;!&ndash; Status bar color. &ndash;&gt;-->
+<!--        <item name="android:statusBarColor">@color/black</item>-->
+
+<!--        &lt;!&ndash; Default Background Color &ndash;&gt;-->
+<!--        <item name="android:background">@color/black</item>-->
+
+<!--        &lt;!&ndash; Default Text Color &ndash;&gt;-->
+<!--        <item name="android:textColor">@color/white</item>-->
+<!--        <item name="android:textColorSecondary">@color/white800</item>-->
+
+<!--        &lt;!&ndash; Default Text Font &ndash;&gt;-->
+<!--        <item name="android:fontFamily">@font/open_sans</item>-->
+
+<!--        &lt;!&ndash; Secondary brand color. &ndash;&gt;-->
+<!--        <item name="colorSecondary">@color/teal_200</item>-->
+<!--        <item name="colorSecondaryVariant">@color/teal_700</item>-->
+<!--        <item name="colorOnSecondary">@color/black</item>-->
+
+<!--    </style>-->
+
+<!--    <style name="Theme.LPSimulation.NoActionBar">-->
+<!--        <item name="windowActionBar">false</item>-->
+<!--        <item name="windowNoTitle">true</item>-->
+<!--    </style>-->
+
+<!--    <style name="Theme.LPSimulation.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />-->
+
+    <!-- Black Color -->
+    <color name="black900">#e4eef5</color>
+    <color name="black800">#999</color>
+    <color name="black700">#777</color>
+
+    <color name="white">#111</color>
+
+    <color name="colorGradientBlackCenter">#000</color>
+    <color name="colorGradientBlackTop">#120026</color>
+
+    <!-- Blue Color -->
+    <color name="blueBlack">#000</color>
+    <color name="blueWhite">#000</color>
+    <color name="blueWhiteBlend">#000</color>
+    <color name="blueWhiteBlendLight">#000</color>
+    <color name="blueGray500">#CACACA</color>
+    <color name="separatorColor">#111</color>
+
+</resources>

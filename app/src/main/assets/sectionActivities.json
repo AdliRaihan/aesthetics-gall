@@ -1,0 +1,40 @@
+{
+  "distanceMeter": "km",
+  "sections": [
+    {
+      "name": "Thievery",
+      "description": "To gain money and rare loots!\nBe careful you might get arrested!",
+      "distance": 0.4
+    },
+    {
+      "name": "Mining",
+      "description": "To get mineral and stones which can be used for crafting or directly sell the product",
+      "distance": 5.5
+    },
+    {
+      "name": "Scavenger Hunter",
+      "description": "Find loots through random places which can be used for crafting or directly sell the item",
+      "distance": 12.4
+    },
+    {
+      "name": "Watching movies",
+      "description": "Watching random movies can get you random boost depends on what film you watch",
+      "distance": 12.4
+    },
+    {
+      "name": "Attend musical event",
+      "description": "Attending musical event can get you random boost",
+      "distance": 12.4
+    },
+    {
+      "name": "Get or extend driving license",
+      "description": "If you already have driving license you only can get extended license",
+      "distance": 12.4
+    },
+    {
+      "name": "Medical Checkup",
+      "description": "Seek professional medicare help to check if you have disease, this not include medical treatment unless you go to hospital",
+      "distance": 12.4
+    }
+  ]
+}

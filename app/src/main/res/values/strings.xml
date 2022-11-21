@@ -1,0 +1,106 @@
+<resources>
+    <string name="app_name">LP Simulation</string>
+    <string name="title_activity_example">_ExampleActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="double_dot">:</string>
+    <string name="sell">Sell</string>
+    <string name="service">Service</string>
+
+    <!-- Dashboard Localisation -->
+    <string name="dashboard_balance">Available Balance</string>
+    <string name="dashboard_wallet">Your Wallet</string>
+    <string name="dashboard_age">Sun</string>
+    <string name="dashboard_total_spend">Action Points</string>
+    <string name="dashboard_action_day_info">1 Point = 1 Hour</string>
+    <string name="dashboard_available_spend">Available</string>
+    <string name="dashboard_total_spend_point">Spent</string>
+    <string name="dashboard_manage">See Details</string>
+    <string name="dashboard_owned_property">Assets</string>
+    <string name="dashboard_house">Property</string>
+    <string name="dashboard_car">Vehicle</string>
+    <string name="dashboard_activities">Travel</string>
+    <string name="dashboard_other_activities">Crafting</string>
+    <string name="dashboard_find_job">Find</string>
+    <string name="dashboard_no_activities">You don\'t have any activities right now</string>
+    <string name="dashboard_activity_logs">Activity logs history</string>
+
+    <string name="dashboard_take_photos">Take Photo (Debug)</string>
+    <string name="dashboard_take_profile">Take Profile Picture (Debug)</string>
+
+    <string name="cell_photo_hire">Contact</string>
+
+    <string name="mock_number">1,000,000,000,000.00</string>
+    <string name="mock_number_simplified">100B</string>
+    <string name="mock_yearly">152,000.00 / year</string>
+    <string name="mock_item_price">2,400.00</string>
+    <string name="mock_section_title">Phone Store</string>
+    <string name="mock_section_description">Phone dealership</string>
+    <string name="mock_related">Related study | Related Experience | Company Relation</string>
+    <string name="mock_navigation_description">Select one of these offers</string>
+    <string name="mock_name">10 November, 2022</string>
+    <string name="mock_apply_bottom_sheet">Apply for this job</string>
+    <string name="mock_apply_bottom_sheet_decline">Maybe later</string>
+    <string name="mock_bottom_sheet_mock">If you get the job action points will be reduced by 270 points each month to work plus cost for transportation</string>
+    <string name="mock_job_offer">Applied Design (Android Developer) - United States</string>
+    <string name="mock_item">Housing, Ave</string>
+    <string name="mock_age">15</string>
+    <string name="mock_percent">100%</string>
+    <string name="mock_location">Home</string>
+    <string name="mock_job">Sr. Android Mobile Developer</string>
+    <string name="mock_account">7816605405</string>
+    <string name="mock_level">999</string>
+    <string name="mock_menu">Menu</string>
+    <string name="mock_total_spent_points">320 points used</string>
+
+    <string name="job_cell_apply">Apply</string>
+    <string name="job_cell_approval_rate">Approve Rate</string>
+    <string name="job_cell_qualify">Qualifications</string>
+    <string name="job_cell_skill">Required Skill(s)</string>
+
+    <string name="item_cell_buy_item">Buy</string>
+    <string name="item_cell_credit_available">Installment Available</string>
+
+    <string name="section_cell_go_default">Visit</string>
+
+    <string name="assets_cell_initial">Initial Price</string>
+    <string name="assets_cell_current">Current Price</string>
+
+    <!-- Icon -->
+    <string name="icon_dollar_sign">dollar-sign</string>
+    <string name="icon_profile">user</string>
+    <string name="icon_location_player">map-marker-alt</string>
+    <string name="icon_money_alt">money-bill-alt</string>
+    <string name="icon_cart">shopping-cart</string>
+    <string name="icon_arrow_left">angle-left</string>
+    <string name="icon_arrow_right">angle-right</string>
+    <string name="icon_arrow_up">angle-up</string>
+    <string name="icon_arrow_down">angle-down</string>
+    <string name="icon_play">play</string>
+    <string name="icon_history">history</string>
+    <string name="icon_home">home</string>
+    <string name="icon_shop">shopping-bag</string>
+    <string name="icon_tools">tools</string>
+    <string name="icon_message">comment-dots</string>
+    <string name="icon_plus">plus</string>
+    <string name="icon_running">running</string>
+    <string name="icon_briefcase">briefcase</string>
+    <string name="icon_travel_map">map-marked-alt</string>
+    <string name="icon_trash">trash-alt</string>
+    <string name="icon_heart">heart</string>
+    <string name="icon_bookmark">bookmark</string>
+    <string name="icon_slash">slash</string>
+    <string name="icon_comment">comment</string>
+    <string name="icon_search">search</string>
+
+    <string-array name="dashboard_words">
+        <item>Available Balance</item>
+    </string-array>
+</resources>

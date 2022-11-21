@@ -1,0 +1,46 @@
+{
+  "jobs": [
+    {
+      "position": "Junior Software Engineering",
+      "level": {
+        "positionLevel": "Entry Level to Mid Level",
+        "salaryRange": {
+          "from": 30000,
+          "to": 60000
+        },
+        "experience": 0
+      },
+      "type": "year",
+      "skills": ["Programming", "Problem Solving"],
+      "educationLevel": ["Bachelor Degree"]
+    },
+    {
+      "position": "Software Engineering",
+      "level": {
+        "positionLevel": "Senior Level",
+        "salaryRange": {
+          "from": 80000,
+          "to": 140000
+        },
+        "experience": 8
+      },
+      "type": "year",
+      "skills": ["Programming", "Problem Solving"],
+      "educationLevel": ["Bachelor Degree and/or Related Experience"]
+    },
+    {
+      "position": "Travel Agent",
+      "level": {
+        "positionLevel": "",
+        "salaryRange": {
+          "from": 15000,
+          "to": 50000
+        },
+        "experience": 0
+      },
+      "type": "year",
+      "skills": ["Social"],
+      "educationLevel": ["Bachelor Degree", "Related Experience"]
+    }
+  ]
+}

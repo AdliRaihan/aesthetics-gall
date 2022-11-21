@@ -1,0 +1,35 @@
+{
+  "distanceMeter": "km",
+  "sections": [
+    {
+      "name": "Phone Dealership",
+      "description": "Buying phone you can start your social media and improve relationship through messenger",
+      "distance": 0.4
+    },
+    {
+      "name": "Car Dealership",
+      "description": "You can travel through places using your own car instead public transportation",
+      "distance": 5.5
+    },
+    {
+      "name": "Hospital",
+      "description": "Treat your medical problem, if you were do health checkup you can use your perception for get a medicine",
+      "distance": 4.9
+    },
+    {
+      "name": "Supermarket",
+      "description": "Buy groceries and raw material to be used for crafting",
+      "distance": 8.22
+    },
+    {
+      "name": "University",
+      "description": "Can grants you skill depends on study you choose",
+      "distance": 7.71
+    },
+    {
+      "name": "Bank",
+      "description": "By opening bank account you can start to store money for long transactions such as investment or paying your own employee",
+      "distance": 8.4
+    }
+  ]
+}

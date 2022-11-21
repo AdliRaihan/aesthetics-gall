@@ -1,0 +1,22 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="LP1">3dp</dimen>
+    <dimen name="LP2">2dp</dimen>
+    <dimen name="LPSS">4dp</dimen>
+    <dimen name="LPS">8dp</dimen>
+    <dimen name="LPSM">12dp</dimen>
+    <dimen name="LPM">16dp</dimen>
+    <dimen name="LPEM">24dp</dimen>
+    <dimen name="LPL">32dp</dimen>
+    <dimen name="LPEL">64dp</dimen>
+
+    <dimen name="iconSize">16sp</dimen>
+    <dimen name="iconIndicatorBottom">14dp</dimen>
+
+    <dimen name="activityIconSize">18sp</dimen>
+    <dimen name="activityIconName">16sp</dimen>
+    <dimen name="activityIconSquare">64dp</dimen>
+
+    <dimen name="cell_photos_ic_size">18sp</dimen>
+</resources>

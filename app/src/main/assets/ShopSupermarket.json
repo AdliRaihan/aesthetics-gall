@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "name": "Canned Food",
+      "description": "To do your baby with the oyl man",
+      "price": 2,
+      "imgName": ""
+    },
+    {
+      "name": "Carrot",
+      "description": "Can be used for cook food",
+      "price": 2,
+      "imgName": ""
+    },
+    {
+      "name": "Olive Oil",
+      "description": "Can be used for cook food",
+      "price": 2,
+      "imgName": ""
+    },
+    {
+      "name": "Onion",
+      "description": "Can be used for cook food",
+      "price": 2,
+      "imgName": ""
+    },
+    {
+      "name": "Raw Beef",
+      "description": "Can be used for cook food",
+      "price": 2,
+      "imgName": ""
+    },
+    {
+      "name": "Rice",
+      "description": "Can be used for cook food",
+      "price": 2,
+      "imgName": ""
+    },
+    {
+      "name": "Kitchen Knife",
+      "description": "Tool for cooking",
+      "price": 2,
+      "imgName": ""
+    },
+    {
+      "name": "Stove",
+      "description": "Can be used for cook food",
+      "price": 2,
+      "imgName": ""
+    }
+  ]
+}
