@@ -15,12 +15,18 @@ data class DMGame(
     var transactionHistory: MutableList<DMTransactionHistory> = mutableListOf()
 ) {
     companion object {
-        fun AppCompatActivity.get(): DMGame? {
+        fun <T: AppCompatActivity>loadSave(caller: T): DMGame? {
             return Gson().fromJson(
-                getSharedPreferences(
+                caller.getSharedPreferences(
                     "DMGameData", MODE_PRIVATE
                 ).getString("GMValues", null),
                 DMGame::class.java)
+        }
+        fun <T: AppCompatActivity>resetSave(caller: T, with: DMGame = DMGame()) {
+            caller.getSharedPreferences("DMGameData", MODE_PRIVATE).edit()
+                .also {
+                    it.putString("GMValues", Gson().toJson(with))
+                }.apply()
         }
     }
     fun AppCompatActivity.save() {

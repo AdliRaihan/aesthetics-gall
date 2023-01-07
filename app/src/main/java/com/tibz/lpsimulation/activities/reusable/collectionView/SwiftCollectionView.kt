@@ -6,9 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import androidx.viewbinding.ViewBinding
 
-class SwiftCollectionView
+class SwiftCollectionView <T>
     (
-    private val section: Int,
+    private val section: MutableList<T>,
     private val delegate: SwiftCollectionViewProtocol,
     private val identifier: String = "",
     ): RecyclerView.Adapter<ViewHolder>() {
@@ -23,7 +23,7 @@ class SwiftCollectionView
     }
 
     override fun getItemCount(): Int {
-        return section
+        return section.size
     }
 
     override fun getItemId(position: Int): Long {

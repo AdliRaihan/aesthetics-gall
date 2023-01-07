@@ -1,5 +1,16 @@
 <resources>
-    <string name="app_name">LP Simulation</string>
+    <string name="app_name">Application</string>
+    <string name="app_description">View, organize, and share your photos and videos with ease.</string>
+    <string name="app_description_r">Experience real life in a fun and immersive way
+        with our life simulation app.</string>
+
+    <string name="LOGIN_SIGNUP">Username</string>
+    <string name="login_app_description">Before you continue please state your username for UI purposes</string>
+    <string name="LOGIN_APP">Start your journey now</string>
+    <string name="on_boarding_details">Legal Agreement</string>
+
+    <string name="login_username_placeholder">Username (Required)</string>
+    <string name="login_password_placeholder">Password (Optional)</string>
     <string name="title_activity_example">_ExampleActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -15,6 +26,7 @@
     <string name="service">Service</string>
 
     <!-- Dashboard Localisation -->
+    <string name="dashboard_greetings">Welcome back!</string>
     <string name="dashboard_balance">Available Balance</string>
     <string name="dashboard_wallet">Your Wallet</string>
     <string name="dashboard_age">Sun</string>
@@ -23,7 +35,7 @@
     <string name="dashboard_available_spend">Available</string>
     <string name="dashboard_total_spend_point">Spent</string>
     <string name="dashboard_manage">See Details</string>
-    <string name="dashboard_owned_property">Assets</string>
+    <string name="dashboard_owned_property">Total assets you have</string>
     <string name="dashboard_house">Property</string>
     <string name="dashboard_car">Vehicle</string>
     <string name="dashboard_activities">Travel</string>
@@ -32,12 +44,17 @@
     <string name="dashboard_no_activities">You don\'t have any activities right now</string>
     <string name="dashboard_activity_logs">Activity logs history</string>
 
+    <string name="look_whats_new">Gotten Morgen!</string>
+    <string name="browse_more">Start Exploring</string>
+
+
+    <string name="check_history">Check History</string>
     <string name="dashboard_take_photos">Take Photo (Debug)</string>
     <string name="dashboard_take_profile">Take Profile Picture (Debug)</string>
 
-    <string name="cell_photo_hire">Contact</string>
+    <string name="cell_photo_hire">Visit Profile</string>
 
-    <string name="mock_number">1,000,000,000,000.00</string>
+    <string name="mock_number">1.24B</string>
     <string name="mock_number_simplified">100B</string>
     <string name="mock_yearly">152,000.00 / year</string>
     <string name="mock_item_price">2,400.00</string>
@@ -45,7 +62,7 @@
     <string name="mock_section_description">Phone dealership</string>
     <string name="mock_related">Related study | Related Experience | Company Relation</string>
     <string name="mock_navigation_description">Select one of these offers</string>
-    <string name="mock_name">10 November, 2022</string>
+    <string name="mock_name">Adli Raihan</string>
     <string name="mock_apply_bottom_sheet">Apply for this job</string>
     <string name="mock_apply_bottom_sheet_decline">Maybe later</string>
     <string name="mock_bottom_sheet_mock">If you get the job action points will be reduced by 270 points each month to work plus cost for transportation</string>
@@ -73,6 +90,8 @@
     <string name="assets_cell_initial">Initial Price</string>
     <string name="assets_cell_current">Current Price</string>
 
+    <string name="error_list_jobs">Sorry, couldn\'t find your history</string>
+
     <!-- Icon -->
     <string name="icon_dollar_sign">dollar-sign</string>
     <string name="icon_profile">user</string>
@@ -80,7 +99,7 @@
     <string name="icon_money_alt">money-bill-alt</string>
     <string name="icon_cart">shopping-cart</string>
     <string name="icon_arrow_left">angle-left</string>
-    <string name="icon_arrow_right">angle-right</string>
+    <string name="icon_arrow_right">arrow-right</string>
     <string name="icon_arrow_up">angle-up</string>
     <string name="icon_arrow_down">angle-down</string>
     <string name="icon_play">play</string>
@@ -99,6 +118,9 @@
     <string name="icon_slash">slash</string>
     <string name="icon_comment">comment</string>
     <string name="icon_search">search</string>
+    <string name="icon_info">info-circle</string>
+    <string name="icon_user">user</string>
+    <string name="icon_bars">bars</string>
 
     <string-array name="dashboard_words">
         <item>Available Balance</item>

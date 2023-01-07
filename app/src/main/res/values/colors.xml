@@ -10,10 +10,15 @@
     <color name="seaBlueColorTop">#2b5876</color>
 
     <!-- Black Color -->
+    <color name="blackHalf">#92000000</color>
     <color name="black">#000</color>
+    <color name="constBlack">#000</color>
     <color name="black900">#262626</color>
     <color name="black800">#484848</color>
     <color name="black700">#676767</color>
+    <color name="constBlack900">#262626</color>
+    <color name="constBlack800">#484848</color>
+    <color name="constBlack700">#676767</color>
 
     <!-- Blue Color -->
     <color name="blueBlack">#120026</color>
@@ -24,11 +29,14 @@
 
     <!-- White Color -->
     <color name="white">#FFF</color>
+    <color name="constWhite">#FFF</color>
+    <color name="constWhite800">#d9d9d9</color>
     <color name="white900">#e9e9e9</color>
     <color name="white800">#d9d9d9</color>
     <color name="whiteSky">#DEF4F4</color>
     <color name="whiteSkyLeft">#D4F4F4</color>
     <color name="whiteSkyRight">#F0FFFF</color>
+    <color name="pureWhite900">#FAFAFA</color>
 
     <!-- Yello Color -->
     <color name="yellow">#b2a300</color>
@@ -44,5 +52,7 @@
     <color name="separatorColor">@color/blueGray500</color>
 
     <color name="colorGradientBlackCenter">#FFF</color>
+    <color name="invisible">#00FFFFFF</color>
     <color name="colorGradientBlackTop">#e9e9e9</color>
+    <color name="link">#0984e3</color>
 </resources>

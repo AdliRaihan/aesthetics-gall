@@ -1,7 +1,5 @@
 package com.tibz.lpsimulation.common.network.unsplash.unsplashModel
-
 import com.google.gson.annotations.SerializedName
-
 class UnsplashPhotos {
     class Response {
         data class Photos (

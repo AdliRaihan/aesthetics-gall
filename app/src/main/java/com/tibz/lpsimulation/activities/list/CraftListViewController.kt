@@ -21,7 +21,7 @@ class CraftListViewController: BaseCollectionViewController(), SwiftCollectionVi
         bottomSheetContent = BottomSheetConfirmationBinding.inflate(layoutInflater)
         bottomSheet = BottomSheetView.create(this, bottomSheetContent, this)
         parentViewBinding.baseRecyclerView.layoutManager = LinearLayoutManager(this)
-        parentViewBinding.baseRecyclerView.adapter = SwiftCollectionView(5, this)
+//        parentViewBinding.baseRecyclerView.adapter = SwiftCollectionView(5, this)
     }
 
     override fun registerCell(parent: ViewGroup): ViewBinding {

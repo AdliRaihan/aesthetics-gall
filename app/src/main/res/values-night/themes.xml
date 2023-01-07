@@ -44,7 +44,10 @@
     <color name="black800">#999</color>
     <color name="black700">#777</color>
 
-    <color name="white">#111</color>
+    <color name="white">#000</color>
+    <color name="white900">#0C0C0C</color>
+    <color name="white800">#121212</color>
+    <color name="pureWhite900">@color/white800</color>
 
     <color name="colorGradientBlackCenter">#000</color>
     <color name="colorGradientBlackTop">#120026</color>
@@ -57,4 +60,5 @@
     <color name="blueGray500">#CACACA</color>
     <color name="separatorColor">#111</color>
 
+    <color name="link">#74b9ff</color>
 </resources>

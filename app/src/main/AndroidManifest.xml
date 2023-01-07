@@ -13,10 +13,12 @@
         android:theme="@style/Theme.LPSimulation"
         tools:targetApi="31">
         <activity
-            android:name=".activities.base.BaseTabbarViewController"
+            android:windowSoftInputMode="adjustNothing"
+            android:name=".activities.controller.Onboarding.OnBoardingVC"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.LPSimulation.NoActionBar">
+            android:theme="@style/Theme.LPSimulation.NoActionBar"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -27,12 +29,13 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.list.JobListViewController"
+            android:name=".activities.controller.Setup.SetupVC"
             android:theme="@style/Theme.LPSimulation.NoActionBar"
             android:exported="true">
         </activity>
         <activity
-            android:name=".activities.list.SectionListViewController"
+            android:configChanges="keyboardHidden|orientation|screenSize|colorMode"
+            android:name=".activities.controller.Home.HomeVC"
             android:theme="@style/Theme.LPSimulation.NoActionBar"
             android:exported="true">
         </activity>

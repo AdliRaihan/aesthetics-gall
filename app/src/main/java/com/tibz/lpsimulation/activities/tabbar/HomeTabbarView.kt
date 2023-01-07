@@ -1,6 +1,6 @@
 package com.tibz.lpsimulation.activities.tabbar
 
-import android.net.Uri
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,28 +8,29 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewbinding.ViewBinding
 import com.tibz.lpsimulation.activities.base.BasePermissionManager
 import com.tibz.lpsimulation.activities.reusable.bottomsheets.BottomSheetProtocol
+import com.tibz.lpsimulation.activities.reusable.collectionView.SwiftCollectionView
 import com.tibz.lpsimulation.activities.reusable.collectionView.SwiftCollectionViewProtocol
-import com.tibz.lpsimulation.common.extension.linearConstruct
 import com.tibz.lpsimulation.common.extension.loadImage
 import com.tibz.lpsimulation.common.helper.LPPhotoManager
 import com.tibz.lpsimulation.common.helper.LPStorageManager
 import com.tibz.lpsimulation.common.network.unsplash.unsplashModel.UnsplashPhotos
 import com.tibz.lpsimulation.databinding.CellPhotosUserHomeBinding
 import com.tibz.lpsimulation.databinding.TabbarHomeViewBinding
-import java.net.URI
 
-class HomeTabbarView(private var parentHolder: AppCompatActivity): Fragment(),
+class HomeTabbarView(parentHolder: AppCompatActivity): Fragment(),
     SwiftCollectionViewProtocol,
     BottomSheetProtocol {
 
     private lateinit var viewBinding: TabbarHomeViewBinding
     private lateinit var viewModel: HomeTabbarViewModel
+    private lateinit var dataSource: SwiftCollectionView<UnsplashPhotos.Response.Details>
     private val imagePicker: BasePermissionManager = BasePermissionManager(null, this)
     private var userPhoto = LPStorageManager(parentHolder)
-    private var listPhotosData: Array<UnsplashPhotos.Response.Details>? = null
+    private var listPhotosData: MutableList<UnsplashPhotos.Response.Details> = mutableListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,6 +44,8 @@ class HomeTabbarView(private var parentHolder: AppCompatActivity): Fragment(),
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         registerPermission()
         super.onViewCreated(view, savedInstanceState)
+        dataSource = SwiftCollectionView(listPhotosData, this)
+
         viewModel = HomeTabbarViewModel()
         userPhoto.loadPhoto()
         setupUI()
@@ -58,18 +61,31 @@ class HomeTabbarView(private var parentHolder: AppCompatActivity): Fragment(),
         viewBinding.setProfilePicture.setOnClickListener {
             loadData()
         }
-    }
 
-    private fun loadData() {
-        viewModel.getAllPhotos {
-            this.listPhotosData = it
-            this.bindData()
+        this.context?.let {
+            viewBinding.usersPhotoLists.layoutManager = LinearLayoutManager(it)
+            viewBinding.usersPhotoLists.adapter = dataSource
         }
     }
 
-    private fun bindData() {
-        this.context?.let {
-            viewBinding.usersPhotoLists.linearConstruct(it, this, listPhotosData?.size ?: 0)
+    private fun loadData(nextPage: Boolean = false) {
+        viewBinding.setProfilePicture.text = "Loading Data ...."
+        viewModel.getAllPhotos(nextPage) {
+            if (it == null) return@getAllPhotos
+            val indexBefore = this.listPhotosData.size
+            if (nextPage) {
+                this.listPhotosData.addAll(it.toMutableList())
+                dataSource.notifyItemRangeChanged(indexBefore, this.listPhotosData.size)
+            }
+            else {
+                this.listPhotosData = it.toMutableList()
+
+                dataSource = SwiftCollectionView(listPhotosData!!, this)
+
+                viewBinding.usersPhotoLists.adapter = dataSource
+            }
+
+            viewBinding.setProfilePicture.text = "Current Loaded Data ${dataSource.itemCount} (${indexBefore}) (${this.listPhotosData?.size})"
         }
     }
 
@@ -79,29 +95,36 @@ class HomeTabbarView(private var parentHolder: AppCompatActivity): Fragment(),
                 LPPhotoManager.resizeImage(this@HomeTabbarView.context, this)?.let { img ->
 //                    photos.add(img)
                 }
-                this@HomeTabbarView.bindData()
             }
         }
     }
 
 
     // Cell Transaction goes here!
+    @SuppressLint("SetTextI18n")
     override fun onItemShowing(row: Int, item: ViewBinding) {
         (item as? CellPhotosUserHomeBinding)?.let {
-            listPhotosData?.apply {
+            listPhotosData.apply {
+
+                // apply pagination
+                if (row >= (this.size - 1)) {
+                    this@HomeTabbarView.loadData(true)
+                }
+
                 val currentItem = this[row]
                 val urlPhoto = currentItem.urls?.regular?.toUri()
                 val userUrlPhoto = currentItem.user?.profileImage?.medium
-                it.usernameLabel.text = currentItem.user?.username
+
+                it.usernameLabel.text = "@${currentItem.user?.username}"
 
                 if (currentItem.user?.bio == null) it.descriptionLabel.visibility = View.GONE
                 else {
                     it.descriptionLabel.visibility = View.VISIBLE
-                    it.descriptionLabel.text = currentItem.user?.bio
                 }
 
                 it.sumLikes.text = currentItem.likes.toString()
                 it.descriptionLabel.text = currentItem.user?.bio
+
                 it.imageHolder.loadImage(urlPhoto)
                 it.userProfileImageHolder.loadImage(userUrlPhoto)
             }

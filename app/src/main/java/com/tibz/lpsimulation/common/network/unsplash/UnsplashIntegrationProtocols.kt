@@ -10,16 +10,13 @@ interface UnsplashIntegrationProtocols {
      * FUCK YOU!
      */
     interface Network {
-        fun <T: Type> get(
-            expectedData: T,
+        fun get(
             specifications: UnsplashBusinessModel.UnsplashSpecifications,
             onReturn: (String?) -> Unit
         )
-
-        fun <T> someGet(
-            expectedData: T,
+        fun getV2(
             specifications: UnsplashBusinessModel.UnsplashSpecifications,
-            onReturn: (T) -> Unit
+            onReturn: (code: Int, didSuccess: Boolean, Response: String?) -> Unit
         )
     }
 }

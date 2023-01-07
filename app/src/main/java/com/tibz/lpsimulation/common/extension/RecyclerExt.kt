@@ -8,5 +8,5 @@ import com.tibz.lpsimulation.activities.reusable.collectionView.SwiftCollectionV
 
 fun RecyclerView.linearConstruct(context: Context, delegate: SwiftCollectionViewProtocol, section: Int) {
     this.layoutManager = LinearLayoutManager(context)
-    this.adapter = SwiftCollectionView(section, delegate)
+//    this.adapter = SwiftCollectionView(section, delegate)
 }

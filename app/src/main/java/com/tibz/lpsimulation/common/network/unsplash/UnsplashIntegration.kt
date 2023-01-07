@@ -3,10 +3,14 @@ package com.tibz.lpsimulation.common.network.unsplash
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import com.google.gson.Gson
+import okhttp3.HttpUrl
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.lang.reflect.Type
+import java.lang.reflect.TypeVariable
 import java.util.concurrent.Executors
+import kotlin.math.exp
 
 class UnsplashIntegration: UnsplashIntegrationProtocols.Network {
     companion object {
@@ -19,27 +23,30 @@ class UnsplashIntegration: UnsplashIntegrationProtocols.Network {
             return OkHttpClient()
         }
 
-    override fun <T : Type> get(
-        expectedData: T,
+    override fun get(
         specifications: UnsplashBusinessModel.UnsplashSpecifications,
         onReturn: (String?) -> Unit
     ) {
-        val client = OkHttpClient()
-        val request = Request.Builder()
+        val client = getClient
+        var request = Request.Builder()
             .url(specifications.uri)
             .addHeader("Authorization", accessKey)
             .build()
-
+        val requestParameter = request.url.newBuilder()
+        specifications.parameter?.let { it ->
+            it.asIterable().forEach { itl ->
+                requestParameter.addQueryParameter(itl.key, itl.value.toString())
+            }
+        }
+        request = Request.Builder()
+            .url(requestParameter.build())
+            .addHeader("Authorization", accessKey)
+            .build()
         val executor = Executors.newSingleThreadExecutor()
         val handler = Handler(Looper.getMainLooper())
-
-        Log.d("UN Hit To", specifications.uri.toString())
-
         executor.execute {
             try {
                 client.newCall(request).execute().apply {
-                    Log.d("Unsplash Response Body", this.networkResponse?.body.toString())
-                    Log.d("Unsplash Direct Bod", this.peekBody(2048).string())
                     handler.post {
                         onReturn.invoke(this.body?.string())
                     }
@@ -51,11 +58,42 @@ class UnsplashIntegration: UnsplashIntegrationProtocols.Network {
         }
     }
 
-    override fun <T> someGet(
-        expectedData: T,
+    override fun getV2(
         specifications: UnsplashBusinessModel.UnsplashSpecifications,
-        onReturn: (T) -> Unit
+        onReturn: (code: Int, didSuccess: Boolean, Response: String?) -> Unit
     ) {
-
+        val client = getClient
+        var request = Request.Builder()
+            .url(specifications.uri)
+            .addHeader("Authorization", accessKey)
+            .build()
+        val requestParameter = request.url.newBuilder()
+        specifications.parameter?.let { it ->
+            it.asIterable().forEach { itl ->
+                requestParameter.addQueryParameter(itl.key, itl.value.toString())
+            }
+        }
+        request = Request.Builder()
+            .url(requestParameter.build())
+            .addHeader("Authorization", accessKey)
+            .build()
+        val executor = Executors.newSingleThreadExecutor()
+        val handler = Handler(Looper.getMainLooper())
+        Log.d("UN Hit To", request.url.toString())
+        Log.d("Query", specifications.parameter.toString())
+        executor.execute {
+            try {
+                client.newCall(request).execute().apply {
+                    Log.d("Unsplash Response Body", this.code.toString())
+                    Log.d("Unsplash Direct Bod", this.peekBody(2048).string())
+                    handler.post {
+                        onReturn.invoke(this.code, true, this.body?.string())
+                    }
+                }
+            }
+            catch (e: Exception) {
+                Log.d("Network Fail", e.message ?: "No Error Known")
+            }
+        }
     }
 }

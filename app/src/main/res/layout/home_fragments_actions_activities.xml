@@ -62,13 +62,21 @@
             <!-- Non static -->
             <LinearLayout
                 android:layout_marginHorizontal="@dimen/LPS"
-                android:background="@drawable/background_gradient_black"
                 android:id="@+id/menu3"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:layout_width="@dimen/activityIconSquare"
                 android:layout_height="@dimen/activityIconSquare">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:src="@mipmap/ic_wallet"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"/>
+                </androidx.cardview.widget.CardView>
                 <TextView
+                    android:visibility="gone"
                     android:textColor="@color/white800"
                     android:textSize="@dimen/activityIconSize"
                     android:text="@string/icon_briefcase"
@@ -76,9 +84,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
-                    android:textColor="@color/white800"
-                    android:layout_marginTop="@dimen/LPSS"
-                    android:textSize="@dimen/activityIconName"
+                    android:fontFamily="@font/open_sans_light"
+                    android:textColor="@color/black900"
+                    android:textSize="12sp"
                     android:text="@string/dashboard_find_job"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -133,13 +141,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <View
-            android:background="@drawable/background_gradient_dark_blue_circle"
+            android:background="@color/black800"
             android:layout_width="24dp"
             android:layout_height="3dp"/>
         <View
             android:visibility="gone"
             android:layout_marginStart="@dimen/LPS"
-            android:background="@drawable/background_gradient_white"
+            android:background="@color/black900"
             android:layout_width="24dp"
             android:layout_height="3dp"/>
     </LinearLayout>
