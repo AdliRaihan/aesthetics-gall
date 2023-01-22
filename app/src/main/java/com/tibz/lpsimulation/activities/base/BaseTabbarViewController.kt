@@ -5,7 +5,6 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.tibz.lpsimulation.activities.tabbar.HomeGameView
-import com.tibz.lpsimulation.activities.tabbar.HomeTabbarView
 import com.tibz.lpsimulation.common.extension.animateAlphaTo
 import com.tibz.lpsimulation.databinding.BaseControllerTabbarViewBinding
 

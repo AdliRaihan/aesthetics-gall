@@ -43,7 +43,7 @@ class OnBoardingVC: AppCompatActivity(), BottomSheetProtocol {
             bottomSheet.dialog?.show()
             vbBottomSheet.username.text = "@" + infoDetails?.user?.username
             vbBottomSheet.profileButtonDesc.text = "Visit @${infoDetails?.user?.username}'s profile"
-            vbBottomSheet.photosImage.loadImage(infoDetails?.user?.profileImage?.medium)
+            vbBottomSheet.photosImage.loadImage(infoDetails?.user?.profileImage?.large)
         }
     }
     private fun loadData() {

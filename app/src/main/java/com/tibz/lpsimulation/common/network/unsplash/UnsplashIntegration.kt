@@ -44,9 +44,13 @@ class UnsplashIntegration: UnsplashIntegrationProtocols.Network {
             .build()
         val executor = Executors.newSingleThreadExecutor()
         val handler = Handler(Looper.getMainLooper())
+        Log.d("UN Hit To", request.url.toString())
+        Log.d("Query", specifications.parameter.toString())
         executor.execute {
             try {
                 client.newCall(request).execute().apply {
+                    Log.d("Unsplash Response Body", this.code.toString())
+                    Log.d("Unsplash Direct Bod", this.peekBody(2048).string())
                     handler.post {
                         onReturn.invoke(this.body?.string())
                     }

@@ -3,23 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <include
-        android:id="@+id/navigationBar"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPageHome"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/viewPageHome"
-        layout="@layout/comp_navigation_home"/>
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPageHome"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/navigationBar"
+        app:layout_constraintBottom_toTopOf="@id/tabbar"
         android:layout_width="0dp"
         android:layout_height="0dp"/>
-
     <include
+        android:id="@+id/tabbar"
         layout="@layout/comp_tabbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

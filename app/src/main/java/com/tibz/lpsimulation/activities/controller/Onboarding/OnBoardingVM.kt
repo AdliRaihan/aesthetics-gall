@@ -15,7 +15,7 @@ class OnBoardingVM {
             URL(UnsplashBusinessModel.pathSearchPhotos)
         )
         target.parameter = mapOf(
-            "query" to "black human",
+            "query" to "quite street",
             "color" to "black",
             "orientation" to "portrait"
         )

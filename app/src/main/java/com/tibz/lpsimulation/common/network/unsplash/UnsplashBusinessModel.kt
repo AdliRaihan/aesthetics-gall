@@ -9,6 +9,8 @@ class UnsplashBusinessModel {
         private const val baseAPI = "https://api.unsplash.com/"
         const val pathPhotos: String = baseAPI + "photos"
         const val pathSearchPhotos: String = baseAPI + "search/photos"
+        fun getUser(username: String): String = baseAPI + "users/${username}"
+        fun getUserPhoto(username: String): String = baseAPI + "users/${username}/photos"
     }
 
     data class UnsplashSpecifications(

@@ -15,7 +15,7 @@ class SwiftCollectionView <T>
 
     private lateinit var vbView: ViewBinding
 
-    class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) { }
+    class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         vbView = delegate.registerCell(parent)
@@ -24,10 +24,6 @@ class SwiftCollectionView <T>
 
     override fun getItemCount(): Int {
         return section.size
-    }
-
-    override fun getItemId(position: Int): Long {
-        return super.getItemId(position)
     }
 
     override fun getItemViewType(position: Int): Int {

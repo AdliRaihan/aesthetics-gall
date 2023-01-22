@@ -46,6 +46,7 @@
 
     <string name="look_whats_new">Gotten Morgen!</string>
     <string name="browse_more">Start Exploring</string>
+    <string name="total_money_saved">Summary transaction made this year</string>
 
 
     <string name="check_history">Check History</string>
@@ -53,16 +54,19 @@
     <string name="dashboard_take_profile">Take Profile Picture (Debug)</string>
 
     <string name="cell_photo_hire">Visit Profile</string>
+    <string name="liked_post">Likes</string>
+    <string name="follower_post">Followers</string>
+    <string name="following_post">Following</string>
 
-    <string name="mock_number">1.24B</string>
-    <string name="mock_number_simplified">100B</string>
+    <string name="mock_number">9.999.999.999.999,00</string>
+    <string name="mock_number_simplified">0</string>
     <string name="mock_yearly">152,000.00 / year</string>
     <string name="mock_item_price">2,400.00</string>
     <string name="mock_section_title">Phone Store</string>
     <string name="mock_section_description">Phone dealership</string>
     <string name="mock_related">Related study | Related Experience | Company Relation</string>
     <string name="mock_navigation_description">Select one of these offers</string>
-    <string name="mock_name">Adli Raihan</string>
+    <string name="mock_name">User</string>
     <string name="mock_apply_bottom_sheet">Apply for this job</string>
     <string name="mock_apply_bottom_sheet_decline">Maybe later</string>
     <string name="mock_bottom_sheet_mock">If you get the job action points will be reduced by 270 points each month to work plus cost for transportation</string>
@@ -71,7 +75,7 @@
     <string name="mock_age">15</string>
     <string name="mock_percent">100%</string>
     <string name="mock_location">Home</string>
-    <string name="mock_job">Sr. Android Mobile Developer</string>
+    <string name="mock_job">User Bio</string>
     <string name="mock_account">7816605405</string>
     <string name="mock_level">999</string>
     <string name="mock_menu">Menu</string>
@@ -98,7 +102,7 @@
     <string name="icon_location_player">map-marker-alt</string>
     <string name="icon_money_alt">money-bill-alt</string>
     <string name="icon_cart">shopping-cart</string>
-    <string name="icon_arrow_left">angle-left</string>
+    <string name="icon_arrow_left">arrow-left</string>
     <string name="icon_arrow_right">arrow-right</string>
     <string name="icon_arrow_up">angle-up</string>
     <string name="icon_arrow_down">angle-down</string>
@@ -121,6 +125,8 @@
     <string name="icon_info">info-circle</string>
     <string name="icon_user">user</string>
     <string name="icon_bars">bars</string>
+    <string name="elipsis_v">ellipsis-v</string>
+    <string name="icon_download">download</string>
 
     <string-array name="dashboard_words">
         <item>Available Balance</item>

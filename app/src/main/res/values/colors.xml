@@ -10,9 +10,9 @@
     <color name="seaBlueColorTop">#2b5876</color>
 
     <!-- Black Color -->
-    <color name="blackHalf">#92000000</color>
-    <color name="black">#000</color>
-    <color name="constBlack">#000</color>
+    <color name="blackHalf">#CC000000</color>
+    <color name="black">#121212</color>
+    <color name="constBlack">#121212</color>
     <color name="black900">#262626</color>
     <color name="black800">#484848</color>
     <color name="black700">#676767</color>
@@ -28,15 +28,18 @@
     <color name="blueGray500">#607D8B</color>
 
     <!-- White Color -->
-    <color name="white">#FFF</color>
+    <color name="whitePureBlack">@color/white</color>
+    <color name="white">#F5F5F5</color>
     <color name="constWhite">#FFF</color>
     <color name="constWhite800">#d9d9d9</color>
     <color name="white900">#e9e9e9</color>
+    <color name="white900A25">#40E9E9E9</color>
+    <color name="white900A75">#F2F5F5F5</color>
     <color name="white800">#d9d9d9</color>
     <color name="whiteSky">#DEF4F4</color>
     <color name="whiteSkyLeft">#D4F4F4</color>
     <color name="whiteSkyRight">#F0FFFF</color>
-    <color name="pureWhite900">#FAFAFA</color>
+    <color name="pureWhite900">#F5F5F5</color>
 
     <!-- Yello Color -->
     <color name="yellow">#b2a300</color>
@@ -55,4 +58,7 @@
     <color name="invisible">#00FFFFFF</color>
     <color name="colorGradientBlackTop">#e9e9e9</color>
     <color name="link">#0984e3</color>
+    <color name="pureblank">#000</color>
+    <color name="pureBlack500">#1C1C1C</color>
+    <color name="whiteToB500">#FFF</color>
 </resources>

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.cardview.widget.CardView
+        android:visibility="gone"
         app:cardBackgroundColor="@color/invisible"
         app:cardElevation="0dp"
         app:cardCornerRadius="0dp"
@@ -14,8 +17,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:paddingVertical="@dimen/LPM"
+            android:id="@+id/containerProfile"
+            android:paddingTop="@dimen/LPM"
             android:paddingHorizontal="@dimen/LPEM"
+            android:paddingBottom="@dimen/LPS"
             android:gravity="center_vertical"
             android:background="@color/constBlack"
             android:orientation="horizontal"
@@ -28,38 +33,43 @@
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
-                <TextView
-                    android:alpha="1"
-                    android:textColor="@color/constWhite"
-                    android:fontFamily="@font/open_sans_light"
-                    android:text="Priorth"
-                    android:textSize="14sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
                 <LinearLayout
                     android:gravity="center"
-                    android:layout_marginTop="@dimen/LPSS"
                     android:orientation="horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <TextView
-                        android:layout_marginEnd="@dimen/LPSS"
-                        android:textColor="@color/orangeLight"
-                        android:text="crown"
-                        android:fontFamily="@font/fasb"
+                        android:textColor="@color/constWhite"
+                        android:fontFamily="@font/open_sans_extra_bold"
+                        android:text="Prior"
+                        android:textSize="24sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                     <TextView
-                        android:alpha="1"
-                        android:textColor="@color/orangeLight"
-                        android:fontFamily="@font/open_sans_extra_bold"
-                        android:text="Paid User"
+                        android:layout_marginStart="@dimen/LPSM"
+                        android:textColor="@color/link"
+                        android:fontFamily="@font/fasb"
+                        android:text="chevron-down"
+                        android:textSize="12sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/constWhite"
+                        android:fontFamily="@font/open_sans"
+                        android:text="Supporter"
                         android:textSize="12sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                 </LinearLayout>
             </LinearLayout>
             <androidx.cardview.widget.CardView
+                android:visibility="gone"
                 app:cardCornerRadius="90dp"
                 app:cardBackgroundColor="@color/invisible"
                 app:layout_constraintTop_toTopOf="parent"
@@ -76,18 +86,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
                     <TextView
-                        android:layout_marginEnd="@dimen/LPS"
                         android:textColor="@color/constWhite"
                         android:textSize="18sp"
-                        android:text="T"
-                        android:fontFamily="@font/open_sans_extra_bold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                    <TextView
-                        android:textSize="18sp"
-                        android:fontFamily="@font/open_sans_semibold"
-                        android:textColor="@color/constWhite"
-                        android:text="@string/mock_number_simplified"
+                        android:text="See Plans"
+                        android:fontFamily="@font/open_sans_bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                 </LinearLayout>
@@ -105,4 +107,84 @@
                 android:layout_height="wrap_content"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/invisible"
+        android:id="@+id/investmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_gravity="end"
+            android:foregroundGravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:visibility="gone"
+                android:layout_marginStart="@dimen/LPM"
+                android:alpha="0.5"
+                app:layout_constraintTop_toTopOf="@id/inputContainer"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:gravity="center_vertical|end"
+                android:id="@+id/filterButtong"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/fasb"
+                android:text="filter"
+                android:textSize="18sp"
+                android:layout_weight="0.1"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/inputContainer"
+                app:cardElevation="0dp"
+                android:layout_marginHorizontal="@dimen/LPS"
+                app:cardCornerRadius="@dimen/LPS"
+                app:cardBackgroundColor="@color/invisible"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/filterButtong"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:background="@color/white"
+                    android:id="@+id/maincontainer"
+                    android:paddingHorizontal="@dimen/LPM"
+                    android:paddingVertical="@dimen/LPSS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:paddingVertical="@dimen/LPSM"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:background="@color/invisible"
+                        android:textColorHint="@color/black700"
+                        android:hint="Search"
+                        android:textColor="@color/black900"
+                        android:textSize="12sp"
+                        android:id="@+id/inputSearch"
+                        android:layout_weight="0.9"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:textAlignment="gravity"/>
+
+                    <TextView
+                        android:gravity="center_vertical|end"
+                        android:id="@+id/inputSearchButtong"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/fasb"
+                        android:text="@string/icon_search"
+                        android:textColor="@color/black900"
+                        android:textSize="18sp"
+                        android:layout_weight="0.1"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

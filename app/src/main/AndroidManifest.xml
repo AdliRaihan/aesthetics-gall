@@ -16,7 +16,7 @@
             android:windowSoftInputMode="adjustNothing"
             android:name=".activities.controller.Onboarding.OnBoardingVC"
             android:exported="true"
-            android:theme="@style/Theme.LPSimulation.NoActionBar"
+            android:theme="@style/FullScreen"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
@@ -40,7 +40,8 @@
             android:exported="true">
         </activity>
         <activity
-            android:name=".activities.list.AssetsListViewController"
+            android:configChanges="keyboardHidden|orientation|screenSize|colorMode"
+            android:name=".activities.controller.profile.ProfileVC"
             android:theme="@style/Theme.LPSimulation.NoActionBar"
             android:exported="true">
         </activity>

@@ -17,6 +17,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.getSystemService
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.marginBottom
+import androidx.core.view.marginTop
 import androidx.loader.content.Loader
 import com.tibz.lpsimulation.R
 import com.tibz.lpsimulation.common.extension.animateAlphaTo
@@ -28,6 +29,7 @@ class LoaderView {
     lateinit var indicator: View
     lateinit var lm: LinearLayout
     lateinit var text: TextView
+    var isShowing = false
     companion object {
         fun createUI(context: Context): LoaderView {
             var loaderView = LoaderView()
@@ -43,8 +45,8 @@ class LoaderView {
             val textLoading = TextView(context)
             textLoading.alpha = 0f
             textLoading.translationY = 350f
-            textLoading.typeface = ResourcesCompat.getFont(context, R.font.open_sans_light)
-            textLoading.text = "Connecting you now to my server"
+            textLoading.typeface = ResourcesCompat.getFont(context, R.font.open_sans_semibold)
+            textLoading.text = "Did you know The word “Photography” comes from the Greek, meaning to draw with light. The earliest known use of the word photograph as we know it was in 1839 by the astronomer Sir John Herschel."
             textLoading.textSize = 14f
             textLoading.textAlignment = View.TEXT_ALIGNMENT_CENTER
             linearLayout.addView(indicator)
@@ -59,7 +61,11 @@ class LoaderView {
         }
     }
     fun display(context: Context, toView: ConstraintLayout) {
+        isShowing = true
         toView.addView(lm)
+        if (lm.layoutParams == null) return
+
+        text.setPadding(32, 24, 32, 0)
         lm.bottom = toView.bottom
         lm.top = toView.top
         lm.left = toView.left
@@ -78,11 +84,9 @@ class LoaderView {
             .alpha(1f)
             .setDuration(500)
             .start()
+
         lm.animateAlphaTo(1f)
 
-        lm.setOnClickListener {
-            hide(toView)
-        }
 
         indicatorAnimation.also {
             it.repeatMode = ValueAnimator.RESTART
@@ -92,6 +96,7 @@ class LoaderView {
         }
     }
     fun hide(from: ConstraintLayout) {
+        isShowing = false
         indicatorAnimation.cancel()
         lm.animateAlphaTo(0f)
         text.animate()

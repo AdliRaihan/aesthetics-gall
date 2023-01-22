@@ -24,4 +24,15 @@ class LPConstants {
             const val supermarket: String = "supermarket"
         }
     }
+    class CollectionID {
+        companion object {
+            const val categoriesCell = "CategoriesCell"
+            const val listsPhotoCell = "ListPhotoCell"
+        }
+    }
+    class StaticInputLogic {
+        companion object {
+            const val filterName = "Filter"
+        }
+    }
 }

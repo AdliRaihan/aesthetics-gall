@@ -7,12 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.tibz.lpsimulation.activities.controller.Home.VP.HomeTabbarViewModel
 import com.tibz.lpsimulation.activities.tabbar.homeFragments.HomeActionActivityFragmentView
 import com.tibz.lpsimulation.activities.tabbar.homeFragments.HomePropertyFragmentView
 import com.tibz.lpsimulation.activities.tabbar.homeFragments.HomeWalletFragmentView
 import com.tibz.lpsimulation.common.extension.loadImage
-import com.tibz.lpsimulation.common.network.unsplash.unsplashModel.UnsplashPhotos
-import com.tibz.lpsimulation.databinding.HomeFragmentsOwnedPropertyBinding
 import com.tibz.lpsimulation.databinding.TabbarHomeGameViewBinding
 
 class HomeGameView(private val parentHolder: AppCompatActivity): Fragment() {

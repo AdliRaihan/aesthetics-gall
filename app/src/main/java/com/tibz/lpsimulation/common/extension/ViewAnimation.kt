@@ -5,6 +5,7 @@ import android.animation.ValueAnimator
 import android.view.View
 import android.view.ViewPropertyAnimator
 import android.view.animation.AccelerateDecelerateInterpolator
+import androidx.core.animation.doOnEnd
 
 fun View.animateAlphaTo(to: Float): ViewPropertyAnimator? {
     return this.animate()
@@ -39,6 +40,27 @@ fun View.shake() {
         this,
         "translationX",
         0f, 25f, -25f, 12f, -12f, 6f, -6f, 0f)
+        .setDuration(1000)
+        .start()
+}
+
+fun View.animateGoneTop(initialValue: Float) {
+    ObjectAnimator.ofFloat(
+        this,
+        "translationY",
+        0f, -initialValue)
+        .setDuration(1000)
+        .start()
+//        .doOnEnd {
+//            this.visibility = View.GONE
+//        }
+}
+
+fun View.animateShowFromTop(initialValue: Float) {
+    ObjectAnimator.ofFloat(
+        this,
+        "translationY",
+        -initialValue, 0f)
         .setDuration(1000)
         .start()
 }
