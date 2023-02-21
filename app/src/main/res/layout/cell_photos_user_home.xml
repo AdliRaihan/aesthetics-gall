@@ -65,6 +65,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/downloadButton"
                     app:cardElevation="0dp"
                     app:cardCornerRadius="@dimen/LPS"
                     android:layout_margin="@dimen/LPSM"

@@ -2,6 +2,7 @@ package com.tibz.lpsimulation
 
 import com.tibz.lpsimulation.common.dataModel.DMTransactionHistory
 import com.tibz.lpsimulation.common.dataModel.DMTransactionHistory.Companion.checkAndPush
+import com.tibz.lpsimulation.common.extension.divideEqual
 import org.junit.Test
 
 class DMHistoryTransactionTest {
@@ -14,5 +15,16 @@ class DMHistoryTransactionTest {
         assert(sutDM.size == 1)
 
         assert(sutDM.first().description == "Joe Mum is hot")
+    }
+    @Test
+    fun testValueInt() {
+        val sutShouldTrue = 3 * 10
+        val sutShouldFalse = (3 * 10) - 1
+        assert(sutShouldTrue.divideEqual() == 10) {
+            sutShouldTrue.divideEqual().toString()
+        }
+        assert(sutShouldFalse.divideEqual() == 10) {
+            sutShouldFalse.divideEqual().toString()
+        }
     }
 }

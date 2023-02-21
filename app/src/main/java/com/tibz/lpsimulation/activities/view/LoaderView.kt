@@ -60,6 +60,43 @@ class LoaderView {
             return loaderView
         }
     }
+    fun displayBottom(context: Context, toView: ConstraintLayout) {
+        if (isShowing) return
+        isShowing = true
+        toView.addView(lm)
+        if (lm.layoutParams == null) return
+
+        text.setPadding(32, 24, 32, 0)
+        lm.bottom = toView.bottom
+        lm.top = toView.top
+        lm.left = toView.left
+        lm.right = toView.right
+        lm.layoutParams.height = 50
+        lm.layoutParams.width = toView.layoutParams.width
+        lm.y =  toView.layoutParams.height.toFloat() - 320f
+        indicator.layoutParams.height = 15
+        indicator.layoutParams.width = 75
+        lm.setPadding(24, 24, 24, 24)
+        val systemService = context.getSystemService(Context.INPUT_METHOD_SERVICE) as
+                InputMethodManager
+        systemService.hideSoftInputFromWindow(toView.windowToken, 0)
+
+        text.animate()
+            .translationY(0f)
+            .alpha(1f)
+            .setDuration(500)
+            .start()
+
+        lm.animateAlphaTo(1f)
+
+
+        indicatorAnimation.also {
+            it.repeatMode = ValueAnimator.RESTART
+            it.repeatCount = ValueAnimator.INFINITE
+            it.duration = 2500
+            it.start()
+        }
+    }
     fun display(context: Context, toView: ConstraintLayout) {
         isShowing = true
         toView.addView(lm)
@@ -86,7 +123,6 @@ class LoaderView {
             .start()
 
         lm.animateAlphaTo(1f)
-
 
         indicatorAnimation.also {
             it.repeatMode = ValueAnimator.RESTART

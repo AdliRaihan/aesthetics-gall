@@ -128,6 +128,24 @@
     <string name="elipsis_v">ellipsis-v</string>
     <string name="icon_download">download</string>
 
+    <string name="before_you_download">Select quality</string>
+    <string name="before_you_download_description">please select one of the image quality</string>
+    <string name="before_you_download_footer">During download you wo be able to do
+        anything until the image is fully downloaded. Please keep in mind that a single
+    developer that work as full stack engineer.</string>
+    <string name="before_you_download_button_action">Download</string>
+    <string name="before_you_download_credit">This photo is curated by</string>
+    <string name="before_you_download_credit_donate">Please consider donating to the author. Contact them through my message app.</string>
+
+    <string name="permission_general">Ouch! Permission denied.</string>
+    <string name="permission_general_description">Application need to read and write files
+        to your device, however this is very optional but in order to save this image to
+        your file system is by granting the access to your phone device otherwise you may
+        experience crashing</string>
+    <string name="permission_footer">Permission is legacy guidelines provided by google
+        apps.</string>
+    <string name="permission_allowed">Allow permission</string>
+    <string name="permission_ignore">Maybe later</string>
     <string-array name="dashboard_words">
         <item>Available Balance</item>
     </string-array>

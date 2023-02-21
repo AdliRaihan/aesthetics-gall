@@ -6,14 +6,15 @@ import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.setPadding
 import com.tibz.lpsimulation.activities.reusable.views.LPImageDockerView
-import com.tibz.lpsimulation.common.extension.*
+import com.tibz.lpsimulation.common.extension.animateAlphaTo
+import com.tibz.lpsimulation.common.extension.currencyFormat
+import com.tibz.lpsimulation.common.extension.divideEqual
+import com.tibz.lpsimulation.common.extension.loadImage
+import com.tibz.lpsimulation.common.network.unsplash.UnsplashImageLoader
 import com.tibz.lpsimulation.common.network.unsplash.unsplashModel.UnsplashPhotos
 import com.tibz.lpsimulation.databinding.CompImageDockerBinding
 import com.tibz.lpsimulation.databinding.VcProfileBinding
-import okhttp3.internal.notify
-import okhttp3.internal.notifyAll
 import java.lang.ref.WeakReference
 
 /*
@@ -78,7 +79,8 @@ class ProfileView(
         val dockerSizeSquare = viewBinding.imageDocker.width/3
         adapterDocker.notifyDataSetChanged()
         viewBinding.imageDocker.adapter = adapterDocker
-        viewBinding.imageDocker.layoutParams.height = dockerSizeSquare * (this.images.size/3)
+        viewBinding.imageDocker.layoutParams.height = dockerSizeSquare * (this.images.size
+            .divideEqual()) + dockerSizeSquare/2
     }
     override fun createView(viewGroup: ViewGroup, position: Int): View {
         val posView = CompImageDockerBinding.inflate(
@@ -88,13 +90,17 @@ class ProfileView(
         ).also {
             if (this.images.size < position) return it.root
             val dockerSizeSquare = viewBinding.imageDocker.width/3
-            it.imageDockerView.loadImage(this.images[position].urls?.small)
+            val currentItem = this.images[position]
             it.imageDockerView.layoutParams.height = dockerSizeSquare
-            it.imageDockerView.setPadding(-180)
+            UnsplashImageLoader.loadImageTarget(
+                WeakReference(it.imageDockerView),
+                currentItem.urls?.small,
+                90
+            )
         }
         return posView.root
     }
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint("SetTextI18n")
     private fun bindListener() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             viewBinding.scrollView.setOnScrollChangeListener { _, _, _, _, _ ->
@@ -111,43 +117,7 @@ class ProfileView(
                 else
                     viewBinding.navigationGrabTicker.visibility = View.VISIBLE
 
-                viewBinding.debugPosition.text = "${memInfo.availMem / 0x100000L} ${y} ${viewBinding.containerInfo.height}"
-            }
-        } else {
-            viewBinding.scrollView.setOnTouchListener { _, _ ->
-                val y = viewBinding.scrollView.scrollY
-                val height = viewBinding.containerInfo.height
-                val currentAlpha = viewBinding.navigationGrabTicker.alpha
-                if (y <= height)
-                    viewBinding.navigationGrabTicker.alpha = y / height.toFloat()
-
-                if (currentAlpha < 0.05)
-                    viewBinding.navigationGrabTicker.visibility = View.GONE
-                else
-                    viewBinding.navigationGrabTicker.visibility = View.VISIBLE
-                false
-            }
-        }
-    }
-    private fun bindListenerDeprecated() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            viewBinding.scrollView.setOnScrollChangeListener { _, _, _, _, _ ->
-                val y = viewBinding.scrollView.scrollY
-                val height = viewBinding.containerInfo.height
-                val currentAlpha = viewBinding.navigationGrabTicker.alpha
-                viewBinding.debugPosition.text = "${memInfo.availMem / 0x100000L} ${y} ${viewBinding.containerInfo.height}"
-                if (y > viewBinding.containerInfo.height && viewBinding.navigationGrabTicker
-                        .alpha == 0f) {
-                    viewBinding.navigationGrabTicker.visibility = View.VISIBLE
-                    viewBinding.navigationGrabTicker.animateAlphaTo(1f)
-                    viewBinding.grabTicker.animateAlphaTo(0f)
-                }
-                else if (currentAlpha == 1f && y <= height) {
-                    viewBinding.navigationGrabTicker.animateAlphaTo(0f)
-                    viewBinding.grabTicker.animateAlphaTo(1f)
-                }
-                else if (currentAlpha == 0f && y == 0)
-                    viewBinding.navigationGrabTicker.visibility = View.GONE
+                viewBinding.debugPosition.text = "${memInfo.availMem / 0x100000L} $y ${viewBinding.containerInfo.height}"
             }
         }
     }

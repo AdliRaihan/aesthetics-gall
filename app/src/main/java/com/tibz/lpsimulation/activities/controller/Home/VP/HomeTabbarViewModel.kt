@@ -56,13 +56,16 @@ class HomeTabbarViewModel {
         // make parameters
         target.parameter = parameters
         uNetwork.getV2(target) { code, didsuccess, response ->
+            if (code != 200 || !didsuccess) result(null)
             try {
                 val data = Gson().fromJson(
                     response,
                     UnsplashSearchPhotos.Details::class.java
                 )
                 result(data)
-            } catch(_: Exception) { }
+            } catch(_: Exception) {
+                result(null)
+            }
         }
     }
 
@@ -89,7 +92,9 @@ class HomeTabbarViewModel {
                     UnsplashSearchPhotos.Details::class.java
                 )
                 result(data)
-            } catch(_: Exception) { }
+            } catch(_: Exception) {
+                result(null)
+            }
         }
     }
 }

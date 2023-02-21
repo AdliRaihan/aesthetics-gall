@@ -68,6 +68,7 @@ class ProfileVC: AppCompatActivity() {
         viewModel.getUserPhoto {
             if (it == null) return@getUserPhoto
             currentView.bindPhotosUser(it.toMutableList())
+            loaderView.hide(currentView.getBinding.root)
         }
     }
 }
